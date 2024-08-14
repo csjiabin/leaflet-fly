@@ -1,0 +1,38 @@
+{
+  "img_zg": {
+    "code": "img_zg",
+    "title": "全国影像底图",
+    "url": "http://t0.tianditu.gov.cn/img_c/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=c&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=e83fa77c8e39673d993923e8fc3c1b83",
+    "minZoom": 0,
+    "maxZoom": 12
+  },
+  "cia_zg": {
+    "code": "cia_zg",
+    "title": "全国地图标注",
+    "url": "https://service.fjmap.net/cia_fj/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia_fj&STYLE=cia_fj&TILEMATRIXSET=Matrix_0&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image%2Fpng",
+    "minZoom": 0,
+    "maxZoom": 12
+  },
+  "img_fj": {
+    "code": "img_fj",
+    "title": "影像底图",
+    "url": "https://service.fjmap.net/img_fj/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&tileSize=256&LAYER=img_fj&STYLE=img_fj&TILEMATRIXSET=Matrix_0&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
+    "minZoom": 13,
+    "maxZoom": 22
+  },
+  "cia_fj": {
+    "code": "cia_fj",
+    "title": "地图标注",
+    "url": "https://service.fjmap.net/cia_fj/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia_fj&STYLE=cia_fj&TILEMATRIXSET=Matrix_0&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image%2Fpng",
+    "minZoom": 13,
+    "maxZoom": 22
+  },
+  "town_outline": {
+    "code": "town_outline",
+    "title": "全国乡镇轮廓图层",
+    "type": "townvector",
+    "url": "https://yycloud.fjycgs.cn/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=fj:fj_town&STYLE=&TILEMATRIX=EPSG:4326:{z}&TILEMATRIXSET=EPSG:4326&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}",
+    "minZoom": 0,
+    "maxZoom": 22
+  }
+}

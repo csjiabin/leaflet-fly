@@ -1,0 +1,41 @@
+{
+  "name": "leaflet-fly",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist",
+    "typings",
+    "index.d.ts"
+  ],
+  "sideEffects": [
+    "dist/*"
+  ],
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./typings/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./typings/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./*": "./*"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.2.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^4.0.2"
+  }
+}
