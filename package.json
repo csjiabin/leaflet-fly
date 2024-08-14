@@ -39,6 +39,14 @@
     "vite": "^5.2.10",
     "vite-plugin-dts": "^4.0.2"
   },
+  "keywords": [
+    "leaflet",
+    "leaflet-fly",
+    "fly",
+    "flylayer",
+    "fly-layer",
+    "leaflet-flylayer"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/csjiabin/leaflet-fly.git"
