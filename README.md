@@ -141,6 +141,6 @@ export interface FlyDataItem {
 
 <p align="center">
     <a href="https://github.com/csjiabin/leaflet-fly" target="_blank">
-    <img src="https://raw.githubusercontent.com/csjiabin/leaflet-fly/HEAD/screenshot.png">
+    <img src="https://raw.githubusercontent.com/csjiabin/leaflet-fly/HEAD/screenshot.gif">
     </a>
 </p>
