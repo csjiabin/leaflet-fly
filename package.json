@@ -37,5 +37,13 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csjiabin/leaflet-fly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/csjiabin/leaflet-fly/issues"
+  },
+  "license": "MIT"
 }
