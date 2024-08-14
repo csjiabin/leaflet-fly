@@ -1,11 +1,22 @@
+### 🚀 Installation
+
+```bash
+npm install leaflet-fly
+# or
+yarn add leaflet-fly
+```
+
+### 💡 Usage
+
 ```html
 <script setup lang="ts">
-  import { onMounted, shallowRef } from "vue";
+  import { onMounted, shallowRef, ref } from "vue";
   import L from "leaflet";
   import "leaflet/dist/leaflet.css";
   import { FlyLayer } from "leaflet-fly";
   import chinaGeo from "../../src/assets/chinaProvince.json";
   let map = shallowRef<L.Map>();
+  let mapRef = ref<HTMLDivElement>();
   const startLatLng = [119.306239, 26.075302];
   function renderGeo() {
     const style = {
@@ -60,31 +71,13 @@
   }
 
   onMounted(() => {
-    map.value = L.map(document.getElementById("map")!).setView(
-      [35.428912, 110.029026],
-      4
-    );
+    map.value = L.map(mapRef.value).setView([35.428912, 110.029026], 4);
     renderGeo();
     renderFly();
   });
 </script>
 
 <template>
-  <div id="map" style="width: 100vw; height: 100vh"></div>
+  <div ref="mapRef" style="width: 100vw; height: 100vh"></div>
 </template>
-
-<style scoped>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
-  }
-</style>
 ```
