@@ -1,3 +1,14 @@
+## leaflet 飞线
+
+<p align="center">
+<a href="https://circleci.com/gh/csjiabin/leaflet-fly/tree/main"><img src="https://img.shields.io/circleci/project/github/csjiabin/leaflet-fly/main.svg?sanitize=true" alt="Build Status"></a>
+<!-- <a href="https://codecov.io/github/csjiabin/leaflet-fly?branch=main"><img src="https://img.shields.io/codecov/c/github/csjiabin/leaflet-fly/main.svg?sanitize=true" alt="Coverage Status"></a> -->
+<a href="https://npmcharts.com/compare/leaflet-fly?minimal=true"><img src="https://img.shields.io/npm/dm/leaflet-fly.svg?sanitize=true" alt="Downloads"></a>
+<a href="https://www.npmjs.com/package/leaflet-fly"><img src="https://img.shields.io/npm/v/leaflet-fly.svg?sanitize=true" alt="Version"></a>
+<a href="https://www.npmjs.com/package/leaflet-fly"><img src="https://img.shields.io/npm/l/leaflet-fly.svg?sanitize=true" alt="License"></a>
+
+</p>
+
 ### 🚀 Installation
 
 ```bash
@@ -13,7 +24,7 @@ yarn add leaflet-fly
   import { onMounted, shallowRef, ref } from "vue";
   import L from "leaflet";
   import "leaflet/dist/leaflet.css";
-  import { FlyLayer } from "leaflet-fly";
+  import { FlyLayer, type FlyDataItem } from "leaflet-fly";
   import chinaGeo from "../../src/assets/chinaProvince.json";
   let map = shallowRef<L.Map>();
   let mapRef = ref<HTMLDivElement>();
@@ -40,7 +51,7 @@ yarn add leaflet-fly
     //     to: [33.902648, 113.619717],
     //   },
     // ];
-    let list = [];
+    let list: FlyDataItem[] = [];
     for (const item of chinaGeo.features) {
       const { properties } = item;
       const centerArr = properties.center;
@@ -81,3 +92,55 @@ yarn add leaflet-fly
   <div ref="mapRef" style="width: 100vw; height: 100vh"></div>
 </template>
 ```
+
+### Type
+
+```ts
+export type MarkerIcon =
+  | L.MarkerOptions["icon"]
+  | ((data: FlyDataItem) => L.MarkerOptions["icon"]);
+
+export interface FlyOptions {
+  /**
+   * 飞线配置
+   * @default {color: '#fff', weight: 2, opacity: 0.5}
+   */
+  line?: L.PolylineOptions;
+  /**
+   * @default {radius: 5, color: '#fff', weight: 1, opacity: 0.5}
+   */
+  marker?: {
+    /** 移动动画 icon */
+    moveIcon?: MarkerIcon;
+    /** 出发点 icon */
+    formIcon?: MarkerIcon;
+    /** 目标点 icon */
+    toIcon?: MarkerIcon;
+    /** 自动旋转 */
+    autoRotation?: boolean;
+    /** 自动移动 */
+    autoMove?: boolean;
+    /** 循环动画 */
+    loop?: boolean;
+    /** 移动动画时长 */
+    duration?: number;
+  };
+}
+
+export interface FlyDataItem {
+  labels: [form: string, to: string];
+  /** 出发点经纬度 */
+  from: L.LatLngExpression;
+  /** 目标点经纬度 */
+  to: L.LatLngExpression;
+  options?: FlyOptions;
+}
+```
+
+### Screenshot
+
+<p align="center">
+    <a href="https://github.com/csjiabin/leaflet-fly" target="_blank">
+    <img src="https://raw.githubusercontent.com/csjiabin/leaflet-fly/HEAD/screenshot.gif">
+    </a>
+</p>

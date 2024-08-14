@@ -33,7 +33,7 @@ export interface FlyDataItem {
   labels: [form: string, to: string];
   from: L.LatLngExpression;
   to: L.LatLngExpression;
-  options: FlyOptions["marker"] & FlyOptions;
+  options?: FlyOptions["marker"] & FlyOptions;
 }
 
 export interface DrawFlyDataItem {
