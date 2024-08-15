@@ -128,7 +128,6 @@ export interface FlyOptions {
 }
 
 export interface FlyDataItem {
-  labels: [form: string, to: string];
   /** 出发点经纬度 */
   from: L.LatLngExpression;
   /** 目标点经纬度 */
